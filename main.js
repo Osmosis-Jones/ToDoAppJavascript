@@ -12,6 +12,7 @@ let add = document.getElementById("add");
         e.preventDefault();
         formValidation();
     });
+    
     //this function ensures that the user entered the correct data by cvalidating and returning an error message to the user and the console
     let formValidation = () => {
         if (textInput.value === "") {
