@@ -24,13 +24,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(161, 164, 206, 0.35);
+    background-color: rgba(74, 123, 168, 0.35);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
   }
   .fa-plus {
-    background-color: #a1a4ce;
+    background-color: #4e679e;
     padding: 3px;
     border-radius: 3px;
   }
@@ -43,21 +43,24 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 14px;
+    margin: 10px;
   }
   
   #tasks div {
-    border: 3px solid #a1a4ce;
-    background-color: #dee1ee;
+    border: 3px solid #a1acce;
+    background-color: #dee5ee;
     border-radius: 6px;
     padding: 5px;
     display: grid;
     gap: 4px;
+    
   }
 
   #tasks div .options {
     justify-self: center;
     display: flex;
     gap: 20px;
+    
   }
   
   #tasks div .options i {

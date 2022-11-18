@@ -40,6 +40,7 @@ let add = document.getElementById("add");
         text: textInput.value,
         date: dateInput.value,
         description: textarea.value,
+        //isdone:
 
         
     });
@@ -76,6 +77,9 @@ let add = document.getElementById("add");
         dateInput.value = "";
         textarea.value = "";
   };
+    function checked(){
+      document.getElementById("tasks").style.backgroundColor = "green";
+    }
 
     //this will be the fucntion we use to delete the created task
     let deleteTask = (e) => {
@@ -88,3 +92,22 @@ let add = document.getElementById("add");
         //this displays the data in the console
         console.log(data);
   };
+  //This will be the function we will use to edit the selected task
+    let editTask = (e) => {
+      let selectedTask = e.parentElement.parentElement;
+      //this line of code overides the index value of the array
+      textInput.value = selectedTask.children[0].innerHTML;
+      dateInput.value = selectedTask.children[1].innerHTML;
+      textarea.value = selectedTask.children[2].innerHTML;
+      //we then delete the previous value that was previously held
+      deleteTask(e);
+    };
+    //This is the function we use to make sure that saved data is used 
+    (() => {
+      //this line of code looks to see if there is any data stored on local storage and then assigns it to the initial array
+      data = JSON.parse(localStorage.getItem("data")) || [];
+      //this console logs the data
+      console.log(data);
+      //this calls the create task function with the previously held data
+      createTasks();
+    })();
